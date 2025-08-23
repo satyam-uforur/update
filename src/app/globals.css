@@ -45,9 +45,5 @@
       0 0 40px hsl(var(--secondary));
   }
 
-  /* Brick parallax scroll */
-  @keyframes brickScroll {
-    0% { background-position: 0 0; }
-    100% { background-position: 0 60px; }
-  }
+  
 }

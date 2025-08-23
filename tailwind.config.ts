@@ -31,18 +31,17 @@ const config: Config = {
         background: "hsl(var(--background))",
         foreground: "hsl(var(--foreground))",
 
-        /* Neon Pink */
+        /* Neon Green (from uploaded image) */
         primary: {
-          DEFAULT: "hsl(var(--primary))",
-          foreground: "hsl(var(--primary-foreground))",
+          DEFAULT: "#35C574",
+          foreground: "#ffffff",
         },
 
-        /* Neon Cyan */
+        /* Secondary, destructive, muted etc. remain same */
         secondary: {
           DEFAULT: "hsl(var(--secondary))",
           foreground: "hsl(var(--secondary-foreground))",
         },
-
         destructive: {
           DEFAULT: "hsl(var(--destructive))",
           foreground: "hsl(var(--destructive-foreground))",
@@ -52,7 +51,6 @@ const config: Config = {
           foreground: "hsl(var(--muted-foreground))",
         },
 
-        /* Accent Purple */
         accent: {
           DEFAULT: "hsl(var(--accent))",
           foreground: "hsl(var(--accent-foreground))",
@@ -75,11 +73,11 @@ const config: Config = {
         neonPulse: {
           "0%, 100%": {
             boxShadow:
-              "0 0 5px hsl(var(--primary)), 0 0 15px hsl(var(--primary)), 0 0 30px hsl(var(--primary))",
+              "0 0 5px #35C574, 0 0 15px #35C574, 0 0 30px #35C574",
           },
           "50%": {
             boxShadow:
-              "0 0 10px hsl(var(--secondary)), 0 0 20px hsl(var(--secondary)), 0 0 40px hsl(var(--secondary))",
+              "0 0 10px #35C574, 0 0 20px #35C574, 0 0 40px #35C574",
           },
         },
         glowFlicker: {
