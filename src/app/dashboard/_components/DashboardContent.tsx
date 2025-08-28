@@ -130,10 +130,10 @@ const DashboardContent = ({ data }: { data: DashboardData }) => {
                 <AvatarImage src={data.user.image || "/placeholder.svg"} alt={data.user.name} />
                 <AvatarFallback className="bg-cyan-900/50 text-cyan-300">{data.user.name.charAt(0)}</AvatarFallback>
               </Avatar>
-              <div>
+              <div className="flex-1 min-w-0">
                 <h3 className="text-lg font-semibold text-white">{data.user.name}</h3>
-                <p className="text-cyan-300/70 flex items-center gap-1">
-                  <Mail className="h-3 w-3" />
+                <p className="text-cyan-300/70 flex items-center gap-1 flex-wrap break-all">
+                  <Mail className="h-3 w-3 flex-shrink-0" />
                   {data.user.email}
                 </p>
               </div>
