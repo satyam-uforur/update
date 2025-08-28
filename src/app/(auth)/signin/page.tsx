@@ -1,18 +1,29 @@
-import Link from "next/link"
-import SiginInButton from "./_components/SiginInButton"
-import GradientAnimatedText from "../../../components/GradientAnimatedText"
-import { Globe } from "@/components/magicui/globe"
-import {MatrixBackground} from "../../../components/matrix-background"
-
-import {DecryptionText} from "../../../components/decryption-text"
-import FingerprintScanner from "../../../components/fingerprint-scanner"
+"use client";
+import Link from "next/link";
+import SiginInButton from "./_components/SiginInButton";
+import GradientAnimatedText from "../../../components/GradientAnimatedText";
+import { MatrixBackground } from "../../../components/matrix-background";
+import { DecryptionText } from "../../../components/decryption-text";
+import FingerprintScanner from "../../../components/fingerprint-scanner";
+import { useSearchParams } from "next/navigation";
+import { useEffect, useState } from "react";
 
 function Signin() {
+  const searchParams = useSearchParams();
+  const [error, setError] = useState<string | null>(null);
+
+  useEffect(() => {
+    const errorParam = searchParams.get("error");
+    if (errorParam === "InvalidDomain") {
+      setError(
+        "ACCESS DENIED: Please login with your college ID (@scet.ac.in)"
+      );
+    }
+  }, [searchParams]);
+
   return (
     <div className="w-full min-h-screen h-screen relative flex flex-col bg-black overflow-hidden">
       <MatrixBackground />
-      
-
 
       <div className="absolute inset-0 bg-[linear-gradient(90deg,transparent_24px,rgba(0,255,204,0.03)_25px,rgba(0,255,204,0.03)_26px,transparent_27px,transparent_74px,rgba(0,255,204,0.03)_75px,rgba(0,255,204,0.03)_76px,transparent_77px),linear-gradient(rgba(0,255,204,0.03)_50%,transparent_50%)] bg-[size:100px_100px]"></div>
 
@@ -36,7 +47,14 @@ function Signin() {
               />
             </div>
 
-          
+            {error && (
+              <div className="p-3 border border-red-500/50 bg-red-500/10 rounded-lg">
+                <DecryptionText
+                  text={error}
+                  className="text-red-400 text-xs font-mono"
+                />
+              </div>
+            )}
 
             <div className="relative group">
               <div className="absolute -inset-1 bg-gradient-to-r from-cyan-500 to-green-500 rounded-lg blur opacity-25 group-hover:opacity-75 transition duration-1000 group-hover:duration-200"></div>
@@ -47,7 +65,10 @@ function Signin() {
             </div>
 
             <div className="mt-4 text-sm font-mono">
-              <DecryptionText text="RETURN TO MAIN SYSTEM" className="text-cyan-400/60" />
+              <DecryptionText
+                text="RETURN TO MAIN SYSTEM"
+                className="text-cyan-400/60"
+              />
               <br />
               <Link
                 href="/"
@@ -56,14 +77,14 @@ function Signin() {
                 [HOME_DIRECTORY]
               </Link>
             </div>
-              <div className="py-6">
+            <div className="py-6">
               <FingerprintScanner />
             </div>
           </div>
         </div>
       </div>
     </div>
-  )
+  );
 }
 
-export default Signin
+export default Signin;
