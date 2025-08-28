@@ -23,7 +23,6 @@ export default async function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  const session = await getServerSession(authOptions);
 
   return (
     <html lang="en">
@@ -62,7 +61,7 @@ export default async function RootLayout({
           zIndex={1600}
           showAtBottom={false}
         />
-        <AuthProvider session={session}>
+        <AuthProvider>
           <UserProvider>
             <Toaster />
             {children}
