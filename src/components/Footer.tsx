@@ -39,7 +39,7 @@ const Footer = () => {
           <div className="flex flex-col gap-1 text-secondary">
             <p>
               <a
-                href="https://github.com/dhruvinvaghani001"
+                href="/home"
                 target="_blank"
                 className="underline underline-offset-4 hover:text-primary transition-colors"
               >
@@ -48,24 +48,25 @@ const Footer = () => {
             </p>
             <p>
               <a
-                href="https://github.com/nikhar-savaliya"
+                href=""
                 target="_blank"
                 className="underline underline-offset-4 hover:text-primary"
               >
-                Jash
+                Jash Khunt
               </a>
             </p>
             <p>
               <a
-                href="https://github.com/abhiradadiya07"
+                href=""
                 target="_blank"
                 className="underline underline-offset-4 hover:text-primary"
               >
                 xyz
               </a>
             </p>
-            <p>Dhvani Maktuporia</p>
-            <p>Kuldeep Kevat</p>
+            <p>Umang Khemka</p>
+            <p>Vishal Shingala</p>
+            <p>Prathmesh Rajput</p>
           </div>
 
           <Link

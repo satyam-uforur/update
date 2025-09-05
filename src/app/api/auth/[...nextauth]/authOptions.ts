@@ -1,10 +1,9 @@
-import GoogleProvider from "next-auth/providers/google";
-import { signIn } from "next-auth/react";
-import { Profile, Account, Session } from "next-auth";
-import connectDB from "../../../../db";
-import User, { IUser } from "../../../../models/user.model";
-import { JWT } from "next-auth/jwt";
-import { Adapter, AdapterUser } from "next-auth/adapters";
+import GoogleProvider from "next-auth/providers/google"
+import type { Profile, Account, Session } from "next-auth"
+import connectDB from "../../../../db"
+import User, { type IUser } from "../../../../models/user.model"
+import type { JWT } from "next-auth/jwt"
+import type { AdapterUser } from "next-auth/adapters"
 
 export const authOptions = {
   providers: [
@@ -27,47 +26,52 @@ export const authOptions = {
       user,
       account,
     }: {
-      token: JWT;
-      user: AdapterUser;
-      account: Account;
+      token: JWT
+      user: AdapterUser
+      account: Account
     }) {
       if (account && user) {
-        await connectDB();
-        const existUser = await User.findOne({ email: user.email });
+        await connectDB()
+        const existUser = await User.findOne({ email: user.email })
         if (existUser) {
-          token.userId = existUser._id.toString();
+          token.userId = existUser._id.toString()
         }
       }
-      return token;
+      return token
     },
     async session({ session, token }: { session: Session; token: JWT }) {
       if (token.userId) {
-        session.user.id = token.userId;
+        session.user.id = token.userId
       }
-      return session;
+      return session
     },
     async signIn({ profile, account }: { profile: Profile; account: Account }) {
-      console.log(profile);
+      console.log(profile)
       if (account.provider == "google") {
         try {
-          await connectDB();
-          console.log("HELLO FROM SIGNIN FUNCTION");
-          const existingUser = await User.findOne({ email: profile.email });
+          if (!profile.email?.endsWith("@scet.ac.in")) {
+            console.log("Invalid email domain:", profile.email)
+            return "/signin?error=InvalidDomain"
+          }
+
+          await connectDB()
+          console.log("HELLO FROM SIGNIN FUNCTION")
+          const existingUser = await User.findOne({ email: profile.email })
           if (existingUser) {
-            return true;
+            return true
           }
           const newUser: IUser = await User.create({
             name: profile.name?.trim(),
             email: profile.email,
             avatar: profile.image,
-          });
-          return true;
+          })
+          return true
         } catch (error: any) {
-          console.log("ERROR WHILE SIGNIN", error);
-          return false;
+          console.log("ERROR WHILE SIGNIN", error)
+          return false
         }
       }
-      return false;
+      return false
     },
   },
-};
+}

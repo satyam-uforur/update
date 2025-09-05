@@ -1,136 +1,144 @@
 const mainCoordinators: PersonProps[] = [
   {
-    name: "Pranav Rathod",
-    image: "pranav_rathod.jpg",
+    name: "Amisha Sakariya",
+    image: "Amisha_Sakariya.jpg",
   },
   {
-    name: "Alankrita Vishwakarma",
-    image: "alankrita_vishwakarma.jpg",
-  },
-  {
-    name: "Saifali Modi",
-    image: "saifali_modi.jpg",
+    name: "Purvi Tandel",
+    image: "Purvi_Tandel.jpg",
   },
 ];
 
 const webTeam: PersonProps[] = [
   {
-    name: "Dhruvin Vaghani",
-    image: "Dhruvin_Vaghani.jpg",
+    name: "Satyam Tiwari",
+    image: "Satyam_Tiwari.jpg",
   },
   {
-    name: "Nikhar Savaliya",
-    image: "nikhar_savaliya.jpg",
+    name: "Vishal Shingala",
+    image: "Vishal_Shingala.jpg",
   },
   {
-    name: "Abhishek Radadiya",
-    image: "Abhishek Radadiya.jpg",
+    name: "Jash Khunt",
+    image: "Jash_Khunt.jpg",
   },
   {
-    name: "Vansh Golakiya",
-    image: "vansh_golakiya.jpg",
+    name: "Prathamesh Rajput",
+    image: "Prathamesh_Rajput.jpg",
   },
   {
-    name: "satyam Tiwari",
-    image: "satyam_tiwari.jpg",
-  },
-  {
-    name: "Dev Italiya",
-    image: "dev_italiya.png",
-  },
+    name: "Umang Khemka",
+    image: "Umang_Khemka.jpg",
+  }
 ];
 const updatesLeads: PersonProps[] = [
   {
-    name: "Zenil Dhameliya",
-    image: "zenil_dhameliya.jpg",
+    name: "Dev Vaghani",
+    image: "Dev_Vaghani.jpg",
   },
   {
-    name: "Kaushal Gadhiya",
-    image: "kaushal_gadhiya.jpg",
+    name: "Om Vasoya",
+    image: "Om_vasoya.jpg",
   },
   {
-    name: "Aum M Patel",
-    image: "aum_patel.jpg",
+    name: "Dhrumil Gabani",
+    image: "Dhrumil_Gabani.jpg",
   },
   {
-    name: "Archi Gazdar",
-    image: "archi_gazdar.jpg",
-  },
-  {
-    name: "Mitesh Dobariya",
-    image: "mitesh_dobariya.jpg",
+    name: "Zeel Jariwala",
+    image: "Zeel_jariwala.jpg",
   },
 ];
 const marketingTeam: PersonProps[] = [
   {
-    name: "Manthan Vaghani",
-    image: "Manthan_Vaghani.JPG",
+    name: "Aarohi Desai",
+    image: "Aarohi_desai.jpg",
   },
   {
-    name: "Deep Gadhiya",
-    image: "Deep_Gadhiya.png",
-  },
-  {
-    name: "Swayam Parekh",
-    image: "Swayam_Parekh.jpg",
-  },
-  {
-    name: "Jit Prajapati",
-    image: "Jit_Prajapati.jpg",
-  },
-  {
-    name: "Vidisha Patel",
-    image: "Vidisha_Patel.jpg",
-  },
-  {
-    name: "Shreya Patel",
-    image: "Shreya_Patel.jpg",
+    name: "Bhargavi Patel",
+    image: "Bhargavi_Patel.jpg",
   },
   {
     name: "Darshan Ukani",
     image: "Darshan_Ukani.jpg",
   },
   {
-    name: "Manendra Jadeja",
-    image: "Manendra_Jadeja.JPG",
+    name: "Darshit Kholwadwala",
+    image: "Darshit_Kholwadwala.jpg",
+  },
+  {
+    name: "Het Bhingradia",
+    image: "Het_Bhingradia.jpg",
+  },
+  {
+    name: "Jeel Khunt",
+    image: "Jeel_Khunt.jpg",
+  },
+  {
+    name: "Nyasa Sapariya",
+    image: "Nyasa_Sapariya.jpg",
+  },
+  {
+    name: "Om Sonani",
+    image: "Om_Sonani.jpg",
+  },
+  {
+    name: "Pankti Rathod",
+    image: "PANKTI_RATHOD.jpg",
+  },
+  {
+    name: "Preet Limbasiya",
+    image: "Preet_Limbasiya.jpg",
+  },
+  {
+    name: "Shiv Patel",
+    image: "Shiv_Patel.jpg",
+  },
+  {
+    name: "Sujal Senjaliya",
+    image: "Sujal_Senjaliya.jpg",
+  },
+  {
+    name: "Vaishnavi Khalasi",
+    image: "Vaishnavi_khalasi.jpg",
   },
 ];
 
 const graphicsTeam: PersonProps[] = [
   {
-    name: "Dhyata Mehta",
-    image: "Dhyata_Mehta.jpg",
-  },
-  {
-    name: "Jay Variya",
-    image: "JAY_VARIYA.jpg",
-  },
-  {
-    name: "Aayushi Tamakuwala",
-    image: "Aayushi_Tamakuwala.jpg",
-  },
-  {
-    name: "Rudra Pandya",
-    image: "Rudra_Pandya.jpg",
-  },
-  {
-    name: "Tisha Tandel",
-    image: "Tisha_Tandel.jpg",
-  },
-  {
-    name: "Divyam Desai",
-    image: "Divyam_Desai.JPG",
+    name: "Jeel Donga",
+    image: "Jeel_Donga.jpg",
   },
   {
     name: "Dwip Shah",
     image: "Dwip_Shah.jpg",
   },
+  {
+    name: "Rajvi Gohil",
+    image: "Gohil_Rajvi.jpg",
+  },
+  {
+    name: "Hetavi Korat",
+    image: "Hetavi_Korat.jpg",
+  },
+  {
+    name: "Mitanshu Patel",
+    image: "Mitanshu_Patel.jpg",
+  },
+  {
+    name: "Shlok Dalsania",
+    image: "Shlok_Dalsania.JPG",
+  },
+  {
+    name: "Umang Kaklotar",
+    image: "Umang_Kaklotar.jpg",
+  },
 ];
 
 const decorationTeam: PersonProps[] = [
   {
-    name: "Dhruvina Ghodadara",
-    image: "Dhruvina_Ghodadara.jpg",
+    name: "Ashvi Patel",
+    image: "Ashvi_Patel.jpg",
   },
   {
     name: "Kesha Naik",
@@ -141,36 +149,48 @@ const decorationTeam: PersonProps[] = [
     image: "Asmi_Desai.jpg",
   },
   {
-    name: "Hasti Patel",
-    image: "Hasti_Patel.jpg",
+    name: "Dharmi Godhani",
+    image: "DHARMI_GODHANI.jpg",
   },
   {
-    name: "Pal Anghan",
-    image: "Pal_Anghan.jpg",
+    name: "Eva Khokani",
+    image: "Eva_khokhani.jpg",
   },
   {
-    name: "Hasti Panseriya",
-    image: "Hasti_Panseriya.jpg",
+    name: "Hency Jayswal",
+    image: "Hency_Jayswal.jpg",
   },
   {
     name: "Heer Mehta",
     image: "Heer_Mehta.jpg",
   },
   {
-    name: "Krishna Vekariya",
-    image: "Krishna_Vekariya.jpg",
+    name: "Jiya Patel",
+    image: "Jiya_Patel.jpg",
   },
   {
-    name: "Tanvi Dhola",
-    image: "Tanvi_Dhola.JPG",
+    name: "Khushi Hirpara",
+    image: "Khushi_Hirpara.JPG",
   },
   {
-    name: "Diya Patel",
-    image: "Diya_Patel.jpg",
+    name: "Mansi Sakariya",
+    image: "Mansi_Sakariya.jpg",
   },
   {
-    name: "Yasvi Parmar",
-    image: "Yasvi_Parmar.jpg",
+    name: "Mitva Padshala",
+    image: "Mitva_Padshala.jpg",
+  },
+  {
+    name: "Shreya Patel",
+    image: "Shreya_patel.jpg",
+  },
+  {
+    name: "Vidhi Vasani",
+    image: "Vidhi_vasani.jpg",
+  },
+  {
+    name: "Yashvi Kachhadiya",
+    image: "Yashvi_kachhadiya.jpg",
   },
 ];
 
@@ -213,12 +233,6 @@ const imageData = [
   },
 ];
 
-const specialThanks = [
-  {
-    name: "Nihar Lakhani - La Mont Perfumes",
-    image: "Nihar_Lakhani.jpeg",
-  },
-];
 
 export {
   mainCoordinators,
@@ -228,5 +242,5 @@ export {
   marketingTeam,
   graphicsTeam,
   imageData,
-  specialThanks,
+  
 };

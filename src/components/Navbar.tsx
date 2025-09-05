@@ -1,30 +1,18 @@
-"use client";
+"use client"
 
-import React from "react";
-import Link from "next/link";
-import {
-  CalendarClockIcon,
-  CameraIcon,
-  HomeIcon,
-  LogOutIcon,
-  UserCog,
-  UserIcon,
-} from "lucide-react";
+import type React from "react"
+import Link from "next/link"
+import { CalendarClockIcon, CameraIcon, HomeIcon, LogOutIcon, UserCog, UserIcon, LayoutDashboard } from "lucide-react"
 
-import { cn } from "../lib/utils";
-import { buttonVariants } from "./ui/button";
-import { Separator } from "./ui/separator";
-import {
-  Tooltip,
-  TooltipContent,
-  TooltipProvider,
-  TooltipTrigger,
-} from "./ui/tooltip";
-import { Dock, DockIcon } from "./magicui/dock";
-import { useUser } from "../context/UserContext";
-import { signOut } from "next-auth/react";
+import { cn } from "../lib/utils"
+import { buttonVariants } from "./ui/button"
+import { Separator } from "./ui/separator"
+import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "./ui/tooltip"
+import { Dock, DockIcon } from "./magicui/dock"
+import { useUser } from "../context/UserContext"
+import { signOut } from "next-auth/react"
 
-export type IconProps = React.HTMLAttributes<SVGElement>;
+export type IconProps = React.HTMLAttributes<SVGElement>
 
 const DATA = {
   navbar: [
@@ -32,10 +20,10 @@ const DATA = {
     { href: "/events", icon: CalendarClockIcon, label: "Events" },
     { href: "/gallery", icon: CameraIcon, label: "Gallery" },
   ],
-};
+}
 
 export function Navbar() {
-  const { user, loading } = useUser();
+  const { user, loading } = useUser()
 
   return (
     <header className="fixed bottom-0 z-30 left-1/2 -translate-x-1/2 -translate-y-1/2 scale-125">
@@ -44,7 +32,6 @@ export function Navbar() {
           direction="middle"
           className="bg-brickDark/80 backdrop-blur-md border-2 border-primary shadow-[0_0_12px_hsl(var(--primary))] relative overflow-hidden"
         >
-          
           {DATA.navbar.map((item) => (
             <DockIcon key={item.label}>
               <Tooltip>
@@ -53,7 +40,7 @@ export function Navbar() {
                     href={item.href}
                     className={cn(
                       buttonVariants({ variant: "ghost", size: "icon" }),
-                      "size-10 rounded-full hover:bg-primary/20 hover:shadow-[0_0_10px_hsl(var(--primary))] transition-all"
+                      "size-10 rounded-full hover:bg-primary/20 hover:shadow-[0_0_10px_hsl(var(--primary))] transition-all",
                     )}
                     prefetch={false}
                   >
@@ -70,6 +57,27 @@ export function Navbar() {
           <Separator orientation="vertical" className="h-full bg-brickOutline" />
 
           {!loading && user ? (
+            <DockIcon key={"dashboard"}>
+              <Tooltip>
+                <TooltipTrigger asChild>
+                  <Link
+                    href={"/dashboard"}
+                    className={cn(
+                      buttonVariants({ variant: "ghost", size: "icon" }),
+                      "size-10 rounded-full hover:bg-cyan-500/20 hover:shadow-[0_0_10px_rgba(0,255,204,0.5)] transition-all",
+                    )}
+                  >
+                    <LayoutDashboard className="size-4 text-cyan-400" />
+                  </Link>
+                </TooltipTrigger>
+                <TooltipContent>
+                  <p>Dashboard</p>
+                </TooltipContent>
+              </Tooltip>
+            </DockIcon>
+          ) : null}
+
+          {!loading && user ? (
             <DockIcon key={"Edit user details"}>
               <Tooltip>
                 <TooltipTrigger asChild>
@@ -77,7 +85,7 @@ export function Navbar() {
                     href={"/user-details"}
                     className={cn(
                       buttonVariants({ variant: "ghost", size: "icon" }),
-                      "size-10 rounded-full hover:bg-secondary/20 hover:shadow-[0_0_10px_hsl(var(--secondary))]"
+                      "size-10 rounded-full hover:bg-secondary/20 hover:shadow-[0_0_10px_hsl(var(--secondary))]",
                     )}
                   >
                     <UserCog className="size-4 text-secondary" />
@@ -98,7 +106,7 @@ export function Navbar() {
                     onClick={() => signOut()}
                     className={cn(
                       buttonVariants({ variant: "ghost", size: "icon" }),
-                      "size-10 rounded-full hover:bg-destructive/20 hover:shadow-[0_0_10px_hsl(var(--destructive))]"
+                      "size-10 rounded-full hover:bg-destructive/20 hover:shadow-[0_0_10px_hsl(var(--destructive))]",
                     )}
                   >
                     <LogOutIcon className="size-4 text-destructive" />
@@ -117,7 +125,7 @@ export function Navbar() {
                     href={"/signin"}
                     className={cn(
                       buttonVariants({ variant: "ghost", size: "icon" }),
-                      "size-10 rounded-full hover:bg-primary/20 hover:shadow-[0_0_10px_hsl(var(--primary))]"
+                      "size-10 rounded-full hover:bg-primary/20 hover:shadow-[0_0_10px_hsl(var(--primary))]",
                     )}
                   >
                     <UserIcon className="size-4 text-primary" />
@@ -132,5 +140,5 @@ export function Navbar() {
         </Dock>
       </TooltipProvider>
     </header>
-  );
+  )
 }

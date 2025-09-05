@@ -2,10 +2,15 @@ import React from "react";
 import BlurFade from "./magicui/blur-fade";
 import GradientAnimatedText from "./GradientAnimatedText";
 import Image from "next/image";
-import codewinglet from "/public/sponsers/codewinglet.svg";
-import vsOverseas from "/public/sponsers/vs-overseas.png";
+// import codewinglet from "/public/sponsers/codewinglet.svg";
+// import vsOverseas from "/public/sponsers/vs-overseas.png";
+import skywin from "../../public/sponsers/Skywin-IT-Academy-logo.jpg";
+import carrerLine from "../../public/sponsers/Careerline-Logo.jpg";
 import msi from "/public/sponsers/msi.png";
-import lamont from "/public/sponsers/lamont.png";
+// import lamont from "/public/sponsers/lamont.png";
+import zuvee from "../../public/sponsers/All-sticker.jpg";
+import sweets from "../../public/sponsers/mithudi-sweets.png";
+import clubWhite from "../../public/sponsers/The-club-of-white.png";
 import ims from "/public/sponsers/ims.png";
 import crony from "/public/sponsers/crony.png";
 import samsung from "/public/sponsers/samsung.png";
@@ -25,26 +30,26 @@ const SponserSection = () => {
       <BlurFade inView className="">
         <div className="flex flex-col md:flex-row justify-center items-center md:gap-12 m-4">
           <Link
-            href={"https://www.codewinglet.com/"}
+            href={"https://skywinitacademy.com/"}
             target="_blank"
-            title="CodeWinglet"
+            title="SkyWin"
             className="aspect-video scale-75 md:scale-100 invert w-4/5 md:w-1/4 rounded-lg flex items-center justify-center"
           >
             <Image
-              src={codewinglet}
+              src={skywin}
               alt="Events Schedule"
               // className="aspect-video scale-75 md:scale-100 invert w-4/5 md:w-1/4 rounded-lg"
               loading="lazy"
             />
           </Link>
           <Link
-            href={"https://www.instagram.com/v.s.overseas/"}
+            href={"https://careerline.org/"}
             target="_blank"
-            title="V.S Overseas"
+            title="CarrerLine"
             className="aspect-video scale-75 md:scale-100 invert w-4/5 md:w-1/4 rounded-lg flex items-center justify-center"
           >
             <Image
-              src={vsOverseas}
+              src={carrerLine}
               alt="Events Schedule"
               // className="scale-75 md:scale-100 invert w-4/5 md:w-1/4 rounded-lg"
               loading="lazy"
@@ -83,7 +88,19 @@ const SponserSection = () => {
       <BlurFade inView className="mt-6">
         <div className="flex flex-col md:flex-row justify-center items-center md:gap-12 m-4">
           <Image
-            src={lamont}
+            src={zuvee}
+            alt="Events Schedule"
+            className="aspect-video scale-75 md:scale-100 bg-white w-4/5 md:w-1/4 flex items-center justify-center"
+            loading="lazy"
+          />
+          <Image
+            src={clubWhite}
+            alt="Events Schedule"
+            className="aspect-video scale-75 md:scale-100 bg-white w-4/5 md:w-1/4 flex items-center justify-center"
+            loading="lazy"
+          />
+          <Image
+            src={sweets}
             alt="Events Schedule"
             className="aspect-video scale-75 md:scale-100 bg-white w-4/5 md:w-1/4 flex items-center justify-center"
             loading="lazy"
