@@ -7,6 +7,10 @@ const mainCoordinators: PersonProps[] = [
     name: "Purvi Tandel",
     image: "Purvi_Tandel.jpg",
   },
+  {
+    name: "Prof. Jignesh Joshi",
+    image: "jignesh.png",
+  },
 ];
 
 const webTeam: PersonProps[] = [
@@ -18,7 +22,7 @@ const webTeam: PersonProps[] = [
     name: "Vishal Shingala",
     image: "Vishal_Shingala.jpg",
   },
-  {
+  { 
     name: "Jash Khunt",
     image: "Jash_Khunt.jpg",
   },
@@ -34,7 +38,7 @@ const webTeam: PersonProps[] = [
 const updatesLeads: PersonProps[] = [
   {
     name: "Dev Vaghani",
-    image: "Dev_Vaghani.jpg",
+    image: "dev1.jpg",
   },
   {
     name: "Om Vasoya",
@@ -46,7 +50,7 @@ const updatesLeads: PersonProps[] = [
   },
   {
     name: "Zeel Jariwala",
-    image: "Zeel_jariwala.jpg",
+    image: "Zeel1.jpg",
   },
 ];
 const marketingTeam: PersonProps[] = [

@@ -15,19 +15,20 @@ const Footer = () => {
             Faculty Coordinators
           </h1>
           <div className="flex flex-col gap-1 text-secondary">
-            <p>xyz</p>
-            <p>xyz</p>
-            <p>xyz</p>
+            <p>Prof.(Dr.) Purvi Tandel 
+</p>
+            <p>Prof. Jignesh Joshi 
+</p>
+            <p>Prof. Amisha Sakariya</p>
           </div>
           <h1 className="mt-6 mb-2 font-bold text-primary drop-shadow-[0_0_6px_hsl(var(--primary))]">
             Student Coordinators
           </h1>
           <div className="flex flex-col gap-1 text-secondary">
-            <p>Vagani</p>
-            <p>zeel</p>
-            <p>vasoya</p>
-            <p></p>
-            <p></p>
+            <p> Dev Vagani</p>
+            <p>Om Vasoya</p>
+            <p>Dhrumil Gabani</p>
+            <p>Zeel Jariwala</p>
           </div>
         </div>
 
@@ -39,7 +40,7 @@ const Footer = () => {
           <div className="flex flex-col gap-1 text-secondary">
             <p>
               <a
-                href="/home"
+                href="https://www.linkedin.com/in/satyam-tiwari-b3259328a/"
                 target="_blank"
                 className="underline underline-offset-4 hover:text-primary transition-colors"
               >
@@ -47,23 +48,9 @@ const Footer = () => {
               </a>
             </p>
             <p>
-              <a
-                href=""
-                target="_blank"
-                className="underline underline-offset-4 hover:text-primary"
-              >
                 Jash Khunt
-              </a>
             </p>
-            <p>
-              <a
-                href=""
-                target="_blank"
-                className="underline underline-offset-4 hover:text-primary"
-              >
-                xyz
-              </a>
-            </p>
+            
             <p>Umang Khemka</p>
             <p>Vishal Shingala</p>
             <p>Prathmesh Rajput</p>

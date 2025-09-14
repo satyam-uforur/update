@@ -28,6 +28,7 @@ export function Navbar() {
   return (
     <header className="fixed bottom-0 z-30 left-1/2 -translate-x-1/2 -translate-y-1/2 scale-125">
       <TooltipProvider>
+        
         <Dock
           direction="middle"
           className="bg-brickDark/80 backdrop-blur-md border-2 border-primary shadow-[0_0_12px_hsl(var(--primary))] relative overflow-hidden"
@@ -77,26 +78,7 @@ export function Navbar() {
             </DockIcon>
           ) : null}
 
-          {!loading && user ? (
-            <DockIcon key={"Edit user details"}>
-              <Tooltip>
-                <TooltipTrigger asChild>
-                  <Link
-                    href={"/user-details"}
-                    className={cn(
-                      buttonVariants({ variant: "ghost", size: "icon" }),
-                      "size-10 rounded-full hover:bg-secondary/20 hover:shadow-[0_0_10px_hsl(var(--secondary))]",
-                    )}
-                  >
-                    <UserCog className="size-4 text-secondary" />
-                  </Link>
-                </TooltipTrigger>
-                <TooltipContent>
-                  <p>Edit Details</p>
-                </TooltipContent>
-              </Tooltip>
-            </DockIcon>
-          ) : null}
+          
 
           {!loading && user ? (
             <DockIcon key={"logout"}>

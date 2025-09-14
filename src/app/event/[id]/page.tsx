@@ -16,13 +16,11 @@ import events from "../../../lib/events";
 import GradientAnimatedText from "../../../components/GradientAnimatedText";
 import { Metadata } from "next";
 import UserDetail from "../../../models/userdetails.model";
+import EventClient from "./EventClient";
 
-export async function generateMetadata({
-  params,
-}: {
-  params: { id: string };
-}): Promise<Metadata> {
+export async function generateMetadata({ params }: { params: { id: string } }): Promise<Metadata> {
   const eventId = params.id;
+  
   const currEvent = events.find((event) => event.id === eventId);
 
   if (!currEvent) {
@@ -30,7 +28,7 @@ export async function generateMetadata({
   }
 
   return {
-    title: `${currEvent.name} | Updates 2k24`,
+    title: `${currEvent.name} | Updates 2k25`,
     description: currEvent.Tagline,
     openGraph: {
       title: currEvent.name,
@@ -54,10 +52,10 @@ export async function generateMetadata({
 }
 
 const Page = async ({ params }: { params: { id: string } }) => {
+  const eventId = params.id;
+
   const session = await getServerSession(authOptions);
   if (!session) return redirect("/auth/login");
-
-  const eventId = params.id;
 
   const currEvent = events.find((event) => event.id === eventId);
   if (!currEvent) return redirect("/events");
@@ -69,22 +67,26 @@ const Page = async ({ params }: { params: { id: string } }) => {
   });
   const isDetailsAvailable = !!userDetails;
 
-  // Try to find the event in DB by its "name"
   let eventData = await Event.findOne({ name: currEvent.name });
 
-  // If not found in DB, auto-create it from static events array
   if (!eventData) {
     eventData = await Event.create({
       name: currEvent.name,
-      id: currEvent.id, // keep both id and name if your schema has both
+      id: currEvent.id,
       Tagline: currEvent.Tagline,
       coverImage: currEvent.coverImage,
-      eventType: currEvent.eventType || "SOLO", // default if missing
+      eventType: currEvent.eventType || "SOLO",
       minMember: currEvent.minMember || 1,
       maxMember: currEvent.maxMember || 1,
       prizePool: currEvent.prizePool || [],
       rounds: currEvent.rounds || [],
-      // add other required fields of your schema here
+      teamSize: currEvent.teamSize,
+      date: currEvent.date,
+      time: currEvent.time,
+      description: currEvent.description,
+      facultyCoordinators: currEvent.facultyCoordinators,
+      coordinators: currEvent.coordinators || currEvent["co-ordinators"],
+      volunteers: currEvent.volunteers,
     });
   }
 
@@ -153,54 +155,20 @@ const Page = async ({ params }: { params: { id: string } }) => {
     }
   }
 
-  return (
-    <div className="px-8 max-w-7xl mx-auto mb-36">
-      <GradientAnimatedText className="mt-12 text-3xl font-black xl:text-4xl/none text-center">
-        {currEvent.name}
-      </GradientAnimatedText>
-      <BlurFade inView>
-        <p className="italic text-center text-violet-100 mb-12 mt-2">
-          &quot;{currEvent.Tagline}&quot;
-        </p>
+return (
+  <EventClient
+    eventData={{
+      ...currEvent,                // static config
+      ...eventData.toObject(),     // DB event
+      _id: eventData._id.toString(),
+    }}
+    isSoloAlreadyRegistered={isSoloAlreadyRegistered}
+    dataOfMembers={dataOfMembers}
+    emailOptions={emailOptions}
+    isDetailsAvailable={isDetailsAvailable}
+  />
+);
 
-        {eventData.eventType === "SOLO" ? (
-          <div className="flex items-center justify-center">
-            <RegisterSoloButton
-              eventId={eventData._id.toString()}
-              isAlredyRegister={isSoloAlreadyRegistered}
-              isDetailsAvailable={isDetailsAvailable}
-            />
-          </div>
-        ) : dataOfMembers.length === 0 ? (
-          <GroupRegistrationForm
-            mini={eventData.minMember}
-            maxi={eventData.maxMember}
-            eventId={eventData._id.toString()}
-            emailOptions={emailOptions}
-            isDetailsAvailable={isDetailsAvailable}
-          />
-        ) : (
-          <div className="p-4 w-full bg-gradient-to-br from-red-950/30 to-red-800/30 rounded-lg border border-red-900/70">
-            <p className="italic text-sm text-violet-50/60 mb-4">
-              *You have already registered for this event
-            </p>
-            <h4 className="text-lg font-bold text-white">Team Members:</h4>
-            <ul className="list-disc list-inside text-muted-foreground">
-              {dataOfMembers.map((data) => (
-                <li key={data.user.name} className="flex items-center gap-3 ml-4 mt-0.5">
-                  <div>
-                    <p>{data.user.name}</p>
-                  </div>
-                </li>
-              ))}
-            </ul>
-          </div>
-        )}
-
-        {/* Keep your existing images, rules, prize table, coordinators, volunteers UI below */}
-      </BlurFade>
-    </div>
-  );
 };
 
 export default Page;

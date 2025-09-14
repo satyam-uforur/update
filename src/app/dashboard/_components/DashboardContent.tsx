@@ -7,6 +7,11 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "../../../components/ui
 import { Progress } from "../../../components/ui/progress"
 import { Calendar, Users, Activity, User, Phone, Mail, GraduationCap, Hash, Clock, Crown } from "lucide-react"
 import { format } from "date-fns"
+import { Tooltip, TooltipContent, TooltipTrigger } from "../../../components/ui/tooltip"
+import { cn } from "../../../lib/utils"
+import { buttonVariants } from "../../../components/ui/button"
+import { UserCog } from "lucide-react"
+import Link from "next/link"
 
 interface DashboardData {
   user: {
@@ -174,6 +179,28 @@ const DashboardContent = ({ data }: { data: DashboardData }) => {
                 <span className="text-sm text-white">{participationRate.toFixed(1)}%</span>
               </div>
               <Progress value={participationRate} className="h-2 bg-cyan-900/30" />
+            </div>
+
+            <div className="pt-4">
+              <Tooltip>
+                <TooltipTrigger asChild>
+                  <Link
+                    href="/user-details"
+                    className={cn(
+                      buttonVariants({ variant: "ghost", size: "icon" }),
+                      "size-10 rounded-full hover:bg-secondary/20 hover:shadow-[0_0_10px_hsl(var(--secondary))]"
+                    )}
+                  >
+                    <UserCog className="size-4 text-secondary" />
+                    
+                  </Link>
+                  
+                </TooltipTrigger>
+                <p>Edit Informations</p>
+                <TooltipContent>
+                  <p>Profile Information</p>
+                </TooltipContent>
+              </Tooltip>
             </div>
           </CardContent>
         </Card>

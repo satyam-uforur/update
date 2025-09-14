@@ -3,7 +3,7 @@ import BlurFade from "./magicui/blur-fade";
 import GradientAnimatedText from "./GradientAnimatedText";
 import { ArrowRightIcon } from "lucide-react";
 import { Button } from "./ui/button";
-import { featuredEvents } from "../lib/events";
+import featuredEvents  from "../lib/events";
 import Card from "./event-card";
 import Link from "next/link";
 

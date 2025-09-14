@@ -1,6 +1,7 @@
 "use client"
 
 import { useState } from "react"
+import { useRouter } from "next/navigation" // Import useRouter for navigation
 
 interface FingerprintScannerProps {
   className?: string
@@ -12,6 +13,7 @@ export default function FingerprintScanner({ className = "" }: FingerprintScanne
   const [isComplete, setIsComplete] = useState(false)
   const [currentFinger, setCurrentFinger] = useState(0)
   const [scannedFingers, setScannedFingers] = useState<number[]>([])
+  const router = useRouter() // Initialize useRouter
 
   const fingerSegments = [
     { id: 0, name: "OUTER", delay: 0 },
@@ -44,13 +46,14 @@ export default function FingerprintScanner({ className = "" }: FingerprintScanne
           setIsScanning(false)
           setIsComplete(true)
 
-          // Reset after 3 seconds
+          // Redirect to home page after scan completion
           setTimeout(() => {
+            router.push("/signin") // Navigate to home page
             setIsComplete(false)
             setScanProgress(0)
             setScannedFingers([])
             setCurrentFinger(0)
-          }, 3000)
+          }, 3000) // Delay matches the existing 3-second reset timeout
 
           return 100
         }

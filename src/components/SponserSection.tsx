@@ -2,7 +2,7 @@ import React from "react";
 import BlurFade from "./magicui/blur-fade";
 import GradientAnimatedText from "./GradientAnimatedText";
 import Image from "next/image";
-// import codewinglet from "/public/sponsers/codewinglet.svg";
+ import codewinglet from "/public/sponsers/Logo_White.png";
 // import vsOverseas from "/public/sponsers/vs-overseas.png";
 import skywin from "../../public/sponsers/Skywin-IT-Academy-logo.jpg";
 import carrerLine from "../../public/sponsers/Careerline-Logo.jpg";
@@ -11,7 +11,7 @@ import msi from "/public/sponsers/msi.png";
 import zuvee from "../../public/sponsers/All-sticker.jpg";
 import sweets from "../../public/sponsers/mithudi-sweets.png";
 import clubWhite from "../../public/sponsers/The-club-of-white.png";
-import ims from "/public/sponsers/ims.png";
+import ims from "/public/sponsers/3.png";
 import crony from "/public/sponsers/crony.png";
 import samsung from "/public/sponsers/samsung.png";
 import solex from "/public/sponsers/solex.png";
@@ -58,27 +58,42 @@ const SponserSection = () => {
         </div>
       </BlurFade>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 max-w-3xl mx-auto">
         <BlurFade inView className="mt-12 grid grid-cols-1">
           <GradientAnimatedText className="font-bold tracking-tighter text-3xl xl:text-4xl/none text-center">
             Tech partner
           </GradientAnimatedText>
           <div className="flex flex-col scale-75 md:flex-row justify-center items-center md:gap-12 m-4">
-            <Image src={msi} alt="Events Schedule" />
+            <Image src={codewinglet} alt="Events Schedule" className="scale-150 w-4/5 md:w-1/4  flex items-center justify-center"
+/>
           </div>
         </BlurFade>
 
+  
+
+<BlurFade inView className="mt-12">
+          <GradientAnimatedText className="font-bold tracking-tighter text-3xl xl:text-4xl/none text-center capitalize pb-2">
+            clothing sponsor
+          </GradientAnimatedText>
+
+          <div className="flex flex-col scale-75 md:flex-row justify-center items-center md:gap-12 m-4">
+            <Image src={ims} alt="Events Schedule" loading="lazy"  className="w-3/5 md:w-1/4 h-48 md:h-42 bg-white flex items-center justify-center"
+ />
+          </div>
+        </BlurFade>
         <BlurFade inView className="mt-12">
           <GradientAnimatedText className="font-bold tracking-tighter text-3xl xl:text-4xl/none text-center capitalize pb-2">
             co sponsor
           </GradientAnimatedText>
 
           <div className="flex flex-col scale-75 md:flex-row justify-center items-center md:gap-12 m-4">
-            <Image src={ims} alt="Events Schedule" loading="lazy" />
-          </div>
-        </BlurFade>
-      </div>
+            <Image
+            src={chaipartner}
+            alt="Events Schedule"
+            className="w-3/5 md:w-1/4 h-48 md:h-44 bg-white flex items-center justify-center"
 
+            loading="lazy"
+          />  </div>
+        </BlurFade>
       <BlurFade inView className="mt-12">
         <GradientAnimatedText className="font-bold tracking-tighter text-3xl xl:text-4xl/none text-center capitalize pb-2">
           gifting sponsor
@@ -99,49 +114,25 @@ const SponserSection = () => {
             className="aspect-video scale-75 md:scale-100 bg-white w-4/5 md:w-1/4 flex items-center justify-center"
             loading="lazy"
           />
+          
+        </div>
+      </BlurFade>
+
+      <BlurFade inView className="mt-12">
+        <GradientAnimatedText className="font-bold tracking-tighter text-3xl xl:text-4xl/none text-center capitalize">
+          food sponsors
+        </GradientAnimatedText>
+      </BlurFade>
+      <BlurFade inView className="mt-6">
+        <div className="flex flex-col md:flex-row justify-center items-center md:gap-12 m-4">
           <Image
             src={sweets}
             alt="Events Schedule"
             className="aspect-video scale-75 md:scale-100 bg-white w-4/5 md:w-1/4 flex items-center justify-center"
             loading="lazy"
           />
-        </div>
-      </BlurFade>
 
-      <BlurFade inView className="mt-12">
-        <GradientAnimatedText className="font-bold tracking-tighter text-3xl xl:text-4xl/none text-center capitalize">
-          supportive sponsors
-        </GradientAnimatedText>
-      </BlurFade>
-      <BlurFade inView className="mt-6">
-        <div className="flex flex-col md:flex-row justify-center items-center md:gap-12 m-4">
-          <Image
-            src={solex}
-            alt="Events Schedule"
-            className="aspect-video scale-75 md:scale-100 bg-white w-4/5 md:w-1/4 flex items-center justify-center"
-            loading="lazy"
-          />
-
-          <Image
-            src={crony}
-            alt="Events Schedule"
-            className="aspect-video scale-75 md:scale-100 bg-white w-4/5 md:w-1/4 flex items-center justify-center"
-            loading="lazy"
-          />
-
-          <Image
-            src={samsung}
-            alt="Events Schedule"
-            className="aspect-video scale-75 md:scale-100 bg-white w-4/5 md:w-1/4 flex items-center justify-center"
-            loading="lazy"
-          />
-
-          <Image
-            src={chaipartner}
-            alt="Events Schedule"
-            className="aspect-video scale-75 md:scale-100 bg-white w-4/5 md:w-1/4 flex items-center justify-center"
-            loading="lazy"
-          />
+          
         </div>
       </BlurFade>
     </section>
