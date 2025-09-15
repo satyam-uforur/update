@@ -59,7 +59,7 @@ const Page = async ({ params }: { params: { id: string } }) => {
 
   // Redirect to Google if the event is "codewinglet"
   if (eventId === "codewinglet") {
-    return redirect("https://www.google.com");
+    return redirect("https://wkf.ms/4mlz9M6");
   }
 
   const currEvent = events.find((event) => event.id === eventId);
