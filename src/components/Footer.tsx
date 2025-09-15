@@ -57,7 +57,7 @@ const Footer = () => {
           </div>
 
           <Link
-            href={"https://instagram.com/updates2k24"}
+            href={"https://www.instagram.com/updates2k25"}
             className="flex items-center justify-start mt-8 gap-2 text-secondary hover:text-primary transition-colors"
           >
             <Instagram />
