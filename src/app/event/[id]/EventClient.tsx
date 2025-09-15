@@ -95,16 +95,7 @@ export default function EventClient({
         <div className="grid lg:grid-cols-3 gap-8">
           <div className="lg:col-span-2 space-y-8">
             {/* Event Description */}
-            <Card className="bg-black/40 border-cyan-500/30 backdrop-blur-sm">
-              <CardHeader>
-                <CardTitle className="text-cyan-400">About the Event</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <p className="text-gray-300 leading-relaxed">
-                  {eventData.description || "A platform for innovative minds to showcase their groundbreaking ideas and solutions."}
-                </p>
-              </CardContent>
-            </Card>
+            
 
             {/* Rules Section */}
             <Card className="bg-black/40 border-cyan-500/30 backdrop-blur-sm">
