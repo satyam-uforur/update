@@ -160,8 +160,8 @@ const HeadDepartmentCard = ({ person }: { person: PersonProps }) => {
       </div>
 
       <p
-        className="text-center text-cyan-300 font-semibold text-lg w-full mx-auto mt-4 mb-6 capitalize
-                   group-hover:text-cyan-400 transition-colors duration-300"
+        className="text-center text-cyan-300/70 text-sm w-20 md:w-28 mx-auto mt-2 mb-6 capitalize
+                         group-hover:text-cyan-300 transition-colors duration-300"
       >
         {person.name}
       </p>
@@ -207,8 +207,8 @@ const WebTeamCard = ({ people }: { people: PersonProps[] }) => {
         {people.slice(0, 2).map((person, index) => (
           <p
             key={index}
-            className="text-center text-cyan-300 font-semibold text-lg w-32 mx-auto mb-6 capitalize
-                       group-hover:text-cyan-400 transition-colors duration-300"
+            className="text-center text-cyan-300/70 text-sm w-20 md:w-28 mx-auto mt-2 mb-6 capitalize
+                         group-hover:text-cyan-300 transition-colors duration-300"
           >
             {person.name}
           </p>
