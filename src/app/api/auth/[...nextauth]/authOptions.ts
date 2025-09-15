@@ -47,13 +47,8 @@ export const authOptions = {
     },
     async signIn({ profile, account }: { profile: Profile; account: Account }) {
       console.log(profile)
-      if (account.provider == "google") {
+      if (account.provider === "google") {
         try {
-          // if (!profile.email?.endsWith("@scet.ac.in")) {
-          //   console.log("Invalid email domain:", profile.email)
-          //   return "/signin?error=InvalidDomain"
-          }
-
           await connectDB()
           console.log("HELLO FROM SIGNIN FUNCTION")
           const existingUser = await User.findOne({ email: profile.email })
