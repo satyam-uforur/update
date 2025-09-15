@@ -1,5 +1,41 @@
 const events = [
   {
+    "id": "codewinglet",
+    "name": "Codewinglet",
+    "coverImage": "/events/poster/123.png",
+    "logo": "/events/logo/123.png",
+    "Tagline": "Code to Conquer",
+    "description": "",
+    "eventType": "GROUP",
+    "teamSize": "1-3",
+    "minMember": "1",
+    "maxMember": "3",
+    "date": "19 September 2025",
+    "time": "12:00 PM to 3:30 PM", // Updated as requested
+    "rounds": [
+      {
+        "name": "Round 1: Foundations & Logic Assessment",
+        "Rules": [
+          "Duration: 1 hour",
+          "Format: Multiple-choice or problem-solving questions designed to test analytical and logical thinking.",
+          "Evaluation: Candidates will be shortlisted based on accuracy and logical approach."
+        ]
+      },
+      {
+        "name": "Round 2: Technical Challenge",
+        "Rules": [
+          "Duration: 1.5 hours",
+          "Format: A single coding problem will be provided. Participants may use any programming language of their choice.",
+          "Qualification Criteria: The submitted solution must pass all given test cases. Code will be evaluated on correctness, efficiency, and clarity.",
+          "✅ Note: Only candidates who clear Round 1 will advance to Round 2."
+        ]
+      }
+    ],
+    "co-ordinators": [],
+    "volunteers": [],
+    "facultyCoordinators": []
+  },
+  {
     "id": "cineverse",
     "name": "Cineverse",
     "coverImage": "/events/poster/Cineverse.png",
@@ -10,8 +46,8 @@ const events = [
     "teamSize": "2-3",
     "minMember": "2",
     "maxMember": "3",
-    "date": "TBD",
-    "time": "TBD",
+    "date": "19 September 2025",
+    "time": "9:30 AM to 10:30 AM",
     "rounds": [
       {
         "name": "Lights, Camera, Quiz! – The First Cut",
@@ -46,8 +82,8 @@ const events = [
     "teamSize": "1",
     "minMember": "1",
     "maxMember": "1",
-    "date": "TBD",
-    "time": "TBD",
+    "date": "19 September 2025",
+    "time": "3:30 PM to 4:30 PM",
     "rounds": [
       {
         "name": "Spot the AI",
@@ -82,8 +118,8 @@ const events = [
     "teamSize": "2-3",
     "minMember": "2",
     "maxMember": "3",
-    "date": "TBD",
-    "time": "TBD",
+    "date": "20 September 2025",
+    "time": "11:00 AM to 1:00 PM", // Updated as requested
     "rounds": [
       {
         "name": "Tech Quiz",
@@ -117,8 +153,8 @@ const events = [
     "teamSize": "2-3",
     "minMember": "2",
     "maxMember": "3",
-    "date": "TBD",
-    "time": "TBD",
+    "date": "19 September 2025",
+    "time": "3:30 PM to 4:30 PM", // Updated as requested
     "rounds": [
       {
         "name": "Round 1",
@@ -151,8 +187,8 @@ const events = [
     "teamSize": "2-3",
     "minMember": "2",
     "maxMember": "3",
-    "date": "TBD",
-    "time": "TBD",
+    "date": "19 September 2025",
+    "time": "9:30 AM to 10:30 AM", // Updated as requested
     "rounds": [
       {
         "name": "Presentation & Cross-questions",
@@ -179,8 +215,8 @@ const events = [
     "teamSize": "1",
     "minMember": "1",
     "maxMember": "1",
-    "date": "TBD",
-    "time": "TBD",
+    "date": "19 September 2025",
+    "time": "11:30 AM to 12:00 PM", // Updated as requested
     "rounds": [
       {
         "name": "Tech Bingo",
@@ -215,8 +251,8 @@ const events = [
     "teamSize": "2-3",
     "minMember": "2",
     "maxMember": "3",
-    "date": "TBD",
-    "time": "TBD",
+    "date": "19 September 2025",
+    "time": "1:30 PM to 3:30 PM", // Updated as requested
     "rounds": [
       {
         "name": "The Brain",
@@ -252,8 +288,8 @@ const events = [
     "teamSize": "2-3",
     "minMember": "2",
     "maxMember": "3",
-    "date": "TBD",
-    "time": "TBD",
+    "date": "19 September 2025",
+    "time": "10:30 AM to 12:00 PM", // Updated as requested
     "rounds": [
       {
         "name": "Round 1",
@@ -288,8 +324,8 @@ const events = [
     "teamSize": "1",
     "minMember": "1",
     "maxMember": "1",
-    "date": "TBD",
-    "time": "TBD",
+    "date": "19 September 2025",
+    "time": "9:00 AM to 9:30 AM",
     "rounds": [
       {
         "name": "IQ Test",
@@ -324,8 +360,8 @@ const events = [
     "teamSize": "1",
     "minMember": "1",
     "maxMember": "1",
-    "date": "TBD",
-    "time": "TBD",
+    "date": "19 September 2025",
+    "time": "10:30 AM to 12:00 PM", // Updated as requested
     "rounds": [
       {
         "name": "Main Round",
@@ -346,15 +382,15 @@ const events = [
     "id": "aavishkar",
     "name": "Aavishkar",
     "coverImage": "/events/poster/AAVISHKAR.png",
-    "logo": "/events/logo/Aavishkar.png",
+    "logo": "/events/logo/AAVISHKAR.png",
     "Tagline": "Innovate to Elevate",
     "description": "",
     "eventType": "GROUP",
     "teamSize": "2-5",
     "minMember": "2",
     "maxMember": "5",
-    "date": "20 September",
-    "time": "9:30 to 11:00 AM",
+    "date": "19 September 2025",
+    "time": "12:00 PM to 1:00 PM",
     "rounds": [
       {
         "name": "Idea Pitching",

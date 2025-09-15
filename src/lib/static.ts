@@ -1,31 +1,38 @@
 const mainCoordinators: PersonProps[] = [
   {
-    name: "Amisha Sakariya",
-    image: "Amisha_Sakariya.jpg",
-  },
-  {
-    name: "Purvi Tandel",
+    
+    name: "Prof.(Dr.) Purvi Tandel",
     image: "Purvi_Tandel.jpg",
   },
   {
     name: "Prof. Jignesh Joshi",
     image: "jignesh.png",
   },
+  {
+    name: "Prof. Amisha Sakariya",
+    image: "Amisha_Sakariya.jpg",
+  },
+  
 ];
-
-const webTeam: PersonProps[] = [
+const hd1: PersonProps[] = [
   {
     name: "Satyam Tiwari",
     image: "Satyam_Tiwari.jpg",
   },
+  
+  {
+    name: "Jash Khunt",
+    image: "Jash_Khunt.jpg",
+  },
+];
+
+const webTeam: PersonProps[] = [
+  
   {
     name: "Vishal Shingala",
     image: "Vishal_Shingala.jpg",
   },
-  { 
-    name: "Jash Khunt",
-    image: "Jash_Khunt.jpg",
-  },
+  
   {
     name: "Prathamesh Rajput",
     image: "Prathamesh_Rajput.jpg",
@@ -33,8 +40,9 @@ const webTeam: PersonProps[] = [
   {
     name: "Umang Khemka",
     image: "Umang_Khemka.jpg",
-  }
+  },
 ];
+
 const updatesLeads: PersonProps[] = [
   {
     name: "Dev Vaghani",
@@ -42,17 +50,18 @@ const updatesLeads: PersonProps[] = [
   },
   {
     name: "Om Vasoya",
-    image: "Om_vasoya.jpg",
+    image: "Om_vasoya.JPG",
   },
   {
     name: "Dhrumil Gabani",
-    image: "Dhrumil_Gabani.jpg",
+    image: "Dhrumil_gabani.jpg",
   },
   {
     name: "Zeel Jariwala",
     image: "Zeel1.jpg",
   },
 ];
+
 const marketingTeam: PersonProps[] = [
   {
     name: "Aarohi Desai",
@@ -186,10 +195,10 @@ const decorationTeam: PersonProps[] = [
   },
   {
     name: "Shreya Patel",
-    image: "Shreya_patel.jpg",
+    image: "Shreya_Patel.jpg",
   },
   {
-    name: "Vidhi Vasani",
+    name: "Vidhi Vas shingles",
     image: "Vidhi_vasani.jpg",
   },
   {
@@ -197,11 +206,19 @@ const decorationTeam: PersonProps[] = [
     image: "Yashvi_kachhadiya.jpg",
   },
 ];
+const hd: PersonProps[] =[
+  {
+ 
+    name: "Prof. (Dr.) Dipali Kasat",
+    image: "dipali.jpg",
+
+  }
+]
 
 const imageData = [
   {
     alt: "photo",
-    url: "/gallery/1.jpg",
+    url: "/gallery/12.jpg",
   },
   {
     alt: "photo",
@@ -219,26 +236,13 @@ const imageData = [
     alt: "photo",
     url: "/gallery/5.jpg",
   },
-  {
-    alt: "photo",
-    url: "/gallery/6.jpg",
-  },
-  {
-    alt: "photo",
-    url: "/gallery/7.jpg",
-  },
-  {
-    alt: "photo",
-    url: "/gallery/8.jpg",
-  },
-  {
-    alt: "photo",
-    url: "/gallery/9.jpg",
-  },
+  
+ 
 ];
 
-
 export {
+  hd1,
+  hd,
   mainCoordinators,
   webTeam,
   updatesLeads,
@@ -246,5 +250,5 @@ export {
   marketingTeam,
   graphicsTeam,
   imageData,
-  
 };
+

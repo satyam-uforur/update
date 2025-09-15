@@ -57,6 +57,11 @@ const Page = async ({ params }: { params: { id: string } }) => {
   const session = await getServerSession(authOptions);
   if (!session) return redirect("/auth/login");
 
+  // Redirect to Google if the event is "codewinglet"
+  if (eventId === "codewinglet") {
+    return redirect("https://www.google.com");
+  }
+
   const currEvent = events.find((event) => event.id === eventId);
   if (!currEvent) return redirect("/events");
 
@@ -155,20 +160,19 @@ const Page = async ({ params }: { params: { id: string } }) => {
     }
   }
 
-return (
-  <EventClient
-    eventData={{
-      ...currEvent,                // static config
-      ...eventData.toObject(),     // DB event
-      _id: eventData._id.toString(),
-    }}
-    isSoloAlreadyRegistered={isSoloAlreadyRegistered}
-    dataOfMembers={dataOfMembers}
-    emailOptions={emailOptions}
-    isDetailsAvailable={isDetailsAvailable}
-  />
-);
-
+  return (
+    <EventClient
+      eventData={{
+        ...currEvent,                // static config
+        ...eventData.toObject(),     // DB event
+        _id: eventData._id.toString(),
+      }}
+      isSoloAlreadyRegistered={isSoloAlreadyRegistered}
+      dataOfMembers={dataOfMembers}
+      emailOptions={emailOptions}
+      isDetailsAvailable={isDetailsAvailable}
+    />
+  );
 };
 
 export default Page;

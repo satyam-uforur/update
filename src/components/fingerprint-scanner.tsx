@@ -1,7 +1,7 @@
 "use client"
 
-import { useState } from "react"
-import { useRouter } from "next/navigation" // Import useRouter for navigation
+import { useState, useRef } from "react"
+import { useRouter } from "next/navigation"
 
 interface FingerprintScannerProps {
   className?: string
@@ -13,7 +13,9 @@ export default function FingerprintScanner({ className = "" }: FingerprintScanne
   const [isComplete, setIsComplete] = useState(false)
   const [currentFinger, setCurrentFinger] = useState(0)
   const [scannedFingers, setScannedFingers] = useState<number[]>([])
-  const router = useRouter() // Initialize useRouter
+  const router = useRouter()
+  const touchStartTime = useRef<number | null>(null)
+  const isProcessing = useRef(false) // For debouncing
 
   const fingerSegments = [
     { id: 0, name: "OUTER", delay: 0 },
@@ -24,7 +26,8 @@ export default function FingerprintScanner({ className = "" }: FingerprintScanne
   ]
 
   const handleScan = () => {
-    if (isScanning || isComplete) return
+    if (isScanning || isComplete || isProcessing.current) return
+    isProcessing.current = true
 
     setIsScanning(true)
     setScanProgress(0)
@@ -38,7 +41,6 @@ export default function FingerprintScanner({ className = "" }: FingerprintScanne
       }, finger.delay)
     })
 
-    // Simulate scanning progress
     const interval = setInterval(() => {
       setScanProgress((prev) => {
         if (prev >= 100) {
@@ -46,14 +48,14 @@ export default function FingerprintScanner({ className = "" }: FingerprintScanne
           setIsScanning(false)
           setIsComplete(true)
 
-          // Redirect to home page after scan completion
           setTimeout(() => {
-            router.push("/signin") // Navigate to home page
+            router.push("/signin")
             setIsComplete(false)
             setScanProgress(0)
             setScannedFingers([])
             setCurrentFinger(0)
-          }, 3000) // Delay matches the existing 3-second reset timeout
+            isProcessing.current = false // Reset debounce
+          }, 5000)
 
           return 100
         }
@@ -62,16 +64,39 @@ export default function FingerprintScanner({ className = "" }: FingerprintScanne
     }, 20)
   }
 
-  return (
-    <div className={`relative cursor-pointer select-none ${className}`} onClick={handleScan} onTouchStart={handleScan}>
-      <div className="relative w-32 h-32 mx-auto mb-6 flex items-center justify-center">
-        {/* Outer glow effect */}
-        <div className="absolute inset-0 rounded-full bg-gradient-to-r from-cyan-500/20 via-blue-500/30 to-cyan-500/20 blur-xl animate-pulse"></div>
+  // Handle touch start to record the time
+  const handleTouchStart = (e: React.TouchEvent) => {
+    touchStartTime.current = Date.now()
+  }
 
-        {/* Main fingerprint container */}
+  // Handle touch end to check duration and trigger scan
+  const handleTouchEnd = (e: React.TouchEvent) => {
+    if (touchStartTime.current) {
+      const touchDuration = Date.now() - touchStartTime.current
+      if (touchDuration < 300) { // Only trigger for touches shorter than 300ms
+        handleScan()
+      }
+    }
+    touchStartTime.current = null
+  }
+
+  // Handle click for non-touch devices
+  const handleClick = () => {
+    handleScan()
+  }
+
+  return (
+    <div
+      className={`relative cursor-pointer select-none ${className}`}
+      onClick={handleClick}
+      onTouchStart={handleTouchStart}
+      onTouchEnd={handleTouchEnd}
+    >
+      {/* Rest of your JSX remains unchanged */}
+      <div className="relative w-32 h-32 mx-auto mb-6 flex items-center justify-center">
+        <div className="absolute inset-0 rounded-full bg-gradient-to-r from-cyan-500/20 via-blue-500/30 to-cyan-500/20 blur-xl animate-pulse"></div>
         <div className="relative w-24 h-24 rounded-full border-2 border-gradient-to-r from-cyan-400 to-blue-500 flex items-center justify-center bg-black/50 backdrop-blur-sm">
           <svg viewBox="0 0 100 100" className="w-16 h-16 transition-all duration-300" fill="none">
-            {/* Outer fingerprint curve */}
             <path
               d="M30 20 Q50 10 70 20 Q80 50 70 80 Q50 90 30 80 Q20 50 30 20"
               fill="none"
@@ -80,8 +105,6 @@ export default function FingerprintScanner({ className = "" }: FingerprintScanne
               className={`transition-all duration-300 ${currentFinger === 0 ? "animate-pulse drop-shadow-lg" : ""}`}
               style={{ filter: currentFinger === 0 ? "drop-shadow(0 0 4px currentColor)" : "none" }}
             />
-
-            {/* Second fingerprint curve */}
             <path
               d="M35 25 Q50 18 65 25 Q72 50 65 75 Q50 82 35 75 Q28 50 35 25"
               fill="none"
@@ -90,8 +113,6 @@ export default function FingerprintScanner({ className = "" }: FingerprintScanne
               className={`transition-all duration-300 ${currentFinger === 1 ? "animate-pulse drop-shadow-lg" : ""}`}
               style={{ filter: currentFinger === 1 ? "drop-shadow(0 0 4px currentColor)" : "none" }}
             />
-
-            {/* Third fingerprint curve */}
             <path
               d="M40 30 Q50 25 60 30 Q65 50 60 70 Q50 75 40 70 Q35 50 40 30"
               fill="none"
@@ -100,8 +121,6 @@ export default function FingerprintScanner({ className = "" }: FingerprintScanne
               className={`transition-all duration-300 ${currentFinger === 2 ? "animate-pulse drop-shadow-lg" : ""}`}
               style={{ filter: currentFinger === 2 ? "drop-shadow(0 0 4px currentColor)" : "none" }}
             />
-
-            {/* Inner fingerprint curve */}
             <path
               d="M45 35 Q50 32 55 35 Q58 50 55 65 Q50 68 45 65 Q42 50 45 35"
               fill="none"
@@ -110,8 +129,6 @@ export default function FingerprintScanner({ className = "" }: FingerprintScanne
               className={`transition-all duration-300 ${currentFinger === 3 ? "animate-pulse drop-shadow-lg" : ""}`}
               style={{ filter: currentFinger === 3 ? "drop-shadow(0 0 4px currentColor)" : "none" }}
             />
-
-            {/* Center fingerprint lines */}
             <path
               d="M50 40 L50 60"
               stroke={scannedFingers.includes(4) ? "#10b981" : currentFinger === 4 ? "#06b6d4" : "#374151"}
@@ -195,7 +212,7 @@ export default function FingerprintScanner({ className = "" }: FingerprintScanne
             ? `SCANNING ${fingerSegments[currentFinger]?.name || ""}...`
             : isComplete
               ? "ACCESS GRANTED"
-              : "TOUCH TO ACCESS"}
+              : "TAP TO ACCESS"}
         </p>
 
         {isScanning && (

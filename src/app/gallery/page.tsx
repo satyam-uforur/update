@@ -4,6 +4,8 @@ import { CyberpunkNav } from "@/components/cyberpunk-nav"
 import { DecryptionText } from "@/components/decryption-text"
 import Marquee from "../../components/magicui/marquee"
 import {
+  hd1,
+  hd,
   decorationTeam,
   graphicsTeam,
   imageData,
@@ -29,7 +31,7 @@ const page = () => {
             Gallery
           </GradientAnimatedText>
           <p className="text-center text-pretty tracking-tighter text-lg sm:text-xl xl:text-2xl/none italic text-cyan-300/70 mt-4">
-            Glimpse from Updates 2k25
+            Glimpse from Updates 2k24
           </p>
         </div>
 
@@ -39,9 +41,9 @@ const page = () => {
               <div
                 key={index}
                 className={`
-                  ${index === 0 ? "col-span-2 row-span-2" : ""}
-                  ${index === 5 ? "col-span-1" : ""}
-                  ${index === 6 ? "col-span-1" : ""}
+                  // ${index === 0 ? "col-span-2 row-span-2" : ""}
+                  // ${index === 5 ? "col-span-1" : ""}
+                  // ${index === 6 ? "col-span-1" : ""}
                   overflow-hidden rounded-lg shadow-lg group cursor-pointer
                   transition-all duration-300 hover:scale-105
                   border border-cyan-500/20 hover:border-cyan-400/60
@@ -84,7 +86,12 @@ const page = () => {
             ))}
           </div>
         </div>
-
+<div className="flex flex-col items-center w-full mt-16">
+          <GradientAnimatedText className="text-2xl mb-2 text-center font-bold tracking-tighter sm:text-3xl xl:text-4xl/none">
+            Head Of Department
+          </GradientAnimatedText>
+          <HeadDepartmentCard person={hd[0]} /> {/* Assuming hd is an array with one person */}
+        </div>
         <GradientAnimatedText className="text-2xl mt-16 mb-2 text-center font-bold tracking-tighter sm:text-3xl xl:text-4xl/none">
           Main Coordinators
         </GradientAnimatedText>
@@ -98,6 +105,9 @@ const page = () => {
         <GradientAnimatedText className="text-2xl mt-10 mb-2 text-center font-bold tracking-tighter sm:text-3xl xl:text-4xl/none">
           Web Team
         </GradientAnimatedText>
+
+         <WebTeamCard people={hd1} />
+       
         <PersonCardList data={webTeam} />
 
         <GradientAnimatedText className="text-2xl mt-10 mb-2 text-center font-bold tracking-tighter sm:text-3xl xl:text-4xl/none">
@@ -118,7 +128,95 @@ const page = () => {
     </div>
   )
 }
+const HeadDepartmentCard = ({ person }: { person: PersonProps }) => {
+  return (
+    <div className="flex flex-col items-center mx-auto max-w-xs">
+      <div className="relative group cursor-pointer">
+        <div
+          className="absolute inset-0 rounded-full bg-cyan-400/30 blur-lg opacity-0 
+                      group-hover:opacity-100 transition-opacity duration-300 scale-110"
+        />
 
+        <Image
+          alt={person.name}
+          src={`/photos/${person.image ? person.image : "avatar.png"}`}
+          width={512}
+          height={512}
+          className="rounded-full shadow-lg shadow-cyan-400/15 border-2 border-cyan-400/50 
+                         mx-auto size-20 md:size-28 object-cover object-center relative z-10
+                         transition-all duration-300 group-hover:border-cyan-400 group-hover:scale-105
+                         group-hover:shadow-cyan-400/30"
+          loading="lazy"
+        />
+
+        <div
+          className="absolute top-0 left-0 w-3 h-3 border-l-2 border-t-2 border-cyan-400 
+                      opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+        />
+        <div
+          className="absolute top-0 right-0 w-3 h-3 border-r-2 border-t-2 border-cyan-400 
+                      opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+        />
+      </div>
+
+      <p
+        className="text-center text-cyan-300 font-semibold text-lg w-full mx-auto mt-4 mb-6 capitalize
+                   group-hover:text-cyan-400 transition-colors duration-300"
+      >
+        {person.name}
+      </p>
+    </div>
+  )
+}
+const WebTeamCard = ({ people }: { people: PersonProps[] }) => {
+  return (
+    <div className="flex flex-col items-center mx-auto max-w-2xl">
+      <div className="flex items-center justify-center gap-20">
+        {people.slice(0, 2).map((person, index) => (
+          <div key={index} className="relative group cursor-pointer">
+            <div
+              className="absolute inset-0 rounded-full bg-cyan-400/30 blur-lg opacity-0 
+                          group-hover:opacity-100 transition-opacity duration-300 scale-110"
+            />
+
+            <Image
+              alt={person.name}
+              src={`/photos/${person.image ? person.image : "avatar.png"}`}
+              width={512}
+              height={512}
+              className="rounded-full shadow-lg shadow-cyan-400/15 border-2 border-cyan-400/50 
+                         mx-auto size-20 md:size-28 object-cover object-center relative z-10
+                         transition-all duration-300 group-hover:border-cyan-400 group-hover:scale-105
+                         group-hover:shadow-cyan-400/30"
+              loading="lazy"
+            />
+
+            <div
+              className="absolute top-0 left-0 w-3 h-3 border-l-2 border-t-2 border-cyan-400 
+                          opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+            />
+            <div
+              className="absolute top-0 right-0 w-3 h-3 border-r-2 border-t-2 border-cyan-400 
+                          opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+            />
+          </div>
+        ))}
+      </div>
+
+      <div className="flex items-center justify-center gap-8 mt-4">
+        {people.slice(0, 2).map((person, index) => (
+          <p
+            key={index}
+            className="text-center text-cyan-300 font-semibold text-lg w-32 mx-auto mb-6 capitalize
+                       group-hover:text-cyan-400 transition-colors duration-300"
+          >
+            {person.name}
+          </p>
+        ))}
+      </div>
+    </div>
+  )
+}
 const PersonCardList = ({ data }: { data: PersonProps[] }) => {
   return (
     <div className={cn("grid grid-cols-3 mx-8 mt-6 gap-3 md:gap-6 md:grid-cols-3 md:max-w-xl md:mx-auto")}>
@@ -127,8 +225,8 @@ const PersonCardList = ({ data }: { data: PersonProps[] }) => {
           <div className="mx-auto group cursor-pointer" key={person.image}>
             <div className="relative">
               <div
-                className="absolute inset-0 rounded-full bg-cyan-400/20 blur-md opacity-0 
-                            group-hover:opacity-100 transition-opacity duration-300 scale-110"
+                className="text-center text-cyan-300/70 text-sm w-20 md:w-28 mx-auto mt-2 mb-6 capitalize
+                         group-hover:text-cyan-300 transition-colors duration-300"
               />
 
               <Image

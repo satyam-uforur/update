@@ -5,9 +5,11 @@ import { DecryptionText } from "@/components/decryption-text"
 import { InteractiveText } from "@/components/interactive-text"
 import FingerprintScanner from "@/components/fingerprint-scanner"
 import InteractiveEvent from "@/components/interactive-event"
+import googleLogo from "@/assets/eventScheduler.jpg";
 import FeaturedEvents from "@/components/FeaturedEvents"
 import SponserSection from "@/components/SponserSection"
 import { ChatWidget } from "@/components/chat-widget"
+import Image from "next/image";
 
 
 
@@ -52,7 +54,17 @@ export default function Home() {
           <div className="max-w-6xl mx-auto">
             
             
-              <FeaturedEvents/>
+              <Image src={googleLogo} alt="Event Schedule" />
+           
+            
+
+          </div>
+        </section>
+        <section id="updates" className="min-h-screen flex items-center justify-center px-6">
+          <div className="max-w-6xl mx-auto">
+            
+            
+              
            
             
 
