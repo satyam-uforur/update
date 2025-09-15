@@ -5,6 +5,7 @@ import User, { type IUser } from "../../../../models/user.model"
 import type { JWT } from "next-auth/jwt"
 import type { AdapterUser } from "next-auth/adapters"
 
+
 export const authOptions = {
   providers: [
     GoogleProvider({
