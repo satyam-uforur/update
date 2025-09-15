@@ -55,7 +55,7 @@ export default function FingerprintScanner({ className = "" }: FingerprintScanne
             setScannedFingers([])
             setCurrentFinger(0)
             isProcessing.current = false // Reset debounce
-          }, 5000)
+          }, 500)
 
           return 100
         }
