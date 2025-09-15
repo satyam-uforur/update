@@ -17,12 +17,12 @@ const mainCoordinators: PersonProps[] = [
 const hd1: PersonProps[] = [
   {
     name: "Satyam Tiwari",
-    image: "Satyam_Tiwari.jpg",
+    image: "satyam_tiwari.jpg",
   },
   
   {
     name: "Jash Khunt",
-    image: "Jash_Khunt.jpg",
+    image: "Jash_khunt.jpg",
   },
 ];
 
@@ -77,7 +77,7 @@ const marketingTeam: PersonProps[] = [
   },
   {
     name: "Darshit Kholwadwala",
-    image: "Darshit_Kholwadwala.jpg",
+    image: "Darshit_kholwadwala.jpg",
   },
   {
     name: "Het Bhingradia",
@@ -140,11 +140,11 @@ const graphicsTeam: PersonProps[] = [
   },
   {
     name: "Shlok Dalsania",
-    image: "Shlok_Dalsania.JPG",
+    image: "Shlok_Dalsania.jpg",
   },
   {
     name: "Umang Kaklotar",
-    image: "Umang_Kaklotar.jpg",
+    image: "Umang_Kaklotar.JPG",
   },
 ];
 
