@@ -55,7 +55,7 @@ export default function FingerprintScanner({ className = "" }: FingerprintScanne
             setScannedFingers([])
             setCurrentFinger(0)
             isProcessing.current = false // Reset debounce
-          }, 1000)
+          }, 5000)
 
           return 100
         }
@@ -86,14 +86,14 @@ export default function FingerprintScanner({ className = "" }: FingerprintScanne
   }
 
   return (
-    <div
-      className={`relative cursor-pointer select-none ${className}`}
-      onClick={handleClick}
-      onTouchStart={handleTouchStart}
-      onTouchEnd={handleTouchEnd}
-    >
-      {/* Rest of your JSX remains unchanged */}
-      <div className="relative w-32 h-32 mx-auto mb-6 flex items-center justify-center">
+    <div className={`relative select-none ${className}`}>
+      {/* Fingerprint circle container with event handlers */}
+      <div
+        className="relative w-32 h-32 mx-auto mb-6 flex items-center justify-center cursor-pointer"
+        onClick={handleClick}
+        onTouchStart={handleTouchStart}
+        onTouchEnd={handleTouchEnd}
+      >
         <div className="absolute inset-0 rounded-full bg-gradient-to-r from-cyan-500/20 via-blue-500/30 to-cyan-500/20 blur-xl animate-pulse"></div>
         <div className="relative w-24 h-24 rounded-full border-2 border-gradient-to-r from-cyan-400 to-blue-500 flex items-center justify-center bg-black/50 backdrop-blur-sm">
           <svg viewBox="0 0 100 100" className="w-16 h-16 transition-all duration-300" fill="none">
