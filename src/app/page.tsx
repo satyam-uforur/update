@@ -72,7 +72,7 @@ export default function Home() {
         </section>
       </div>
       
-<ChatWidget/>
+
     </main>
   )
 }
