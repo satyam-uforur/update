@@ -49,9 +49,9 @@ export const authOptions = {
       console.log(profile)
       if (account.provider == "google") {
         try {
-          if (!profile.email?.endsWith("@scet.ac.in")) {
-            console.log("Invalid email domain:", profile.email)
-            return "/signin?error=InvalidDomain"
+          // if (!profile.email?.endsWith("@scet.ac.in")) {
+          //   console.log("Invalid email domain:", profile.email)
+          //   return "/signin?error=InvalidDomain"
           }
 
           await connectDB()
