@@ -203,7 +203,7 @@ const WebTeamCard = ({ people }: { people: PersonProps[] }) => {
         ))}
       </div>
 
-      <div className="flex items-center justify-center gap-8 mt-4">
+      <div className="flex items-center justify-center gap-20 mt-4">
         {people.slice(0, 2).map((person, index) => (
           <p
             key={index}
