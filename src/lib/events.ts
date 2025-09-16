@@ -243,7 +243,7 @@ const events = [
   {
     "id": "decode-and-dash",
     "name": "Decode & Dash",
-    "coverImage": "/events/poster/Decode & Dash.png",
+    "coverImage": "/events/poster/decode & Dash.png",
     "logo": "/events/logo/Decode & Dash.png",
     "Tagline": "Solve, Run, Win!",
     "description": "",
