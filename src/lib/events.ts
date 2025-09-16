@@ -244,7 +244,7 @@ const events = [
     "id": "decode-and-dash",
     "name": "Decode & Dash",
     "coverImage": "/events/poster/Decode & Dash.png",
-    "logo": "/events/logo/decode & Dash.png",
+    "logo": "/events/logo/Decode & Dash.png",
     "Tagline": "Solve, Run, Win!",
     "description": "",
     "eventType": "GROUP",
