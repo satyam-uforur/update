@@ -26,6 +26,28 @@ const hd1: PersonProps[] = [
   },
 ];
 
+const photographyTeam: PersonProps[] = [
+  {
+    name: "Aarchi Sojitra",
+    image: "1p.jpg.jpg",
+  },
+  {
+    name:"Darshan Ghinaiya",
+    image: "2p.jpg.jpg",
+  },
+  {
+    name:"Devangi_Paramar",
+    image: "3p.jpg.jpg",
+  },
+  {
+    name:"Jinay More",
+    image: "4p.jpg.jpg",
+  },
+  {
+    name: "Nisarg Nanavati",
+    image: "5p.jpg",
+  }
+];
 const webTeam: PersonProps[] = [
   
   {
@@ -241,6 +263,7 @@ const imageData = [
 ];
 
 export {
+  photographyTeam,
   hd1,
   hd,
   mainCoordinators,
