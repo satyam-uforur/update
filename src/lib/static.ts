@@ -33,7 +33,7 @@ const photographyTeam: PersonProps[] = [
   },
   {
     name:"Darshan Ghinaiya",
-    image: "2p.jpg.jpg",
+    image: "2p.jpg.JPG",
   },
   {
     name:"Devangi_Paramar",
