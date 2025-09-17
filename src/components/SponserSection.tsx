@@ -5,6 +5,7 @@ import Image from "next/image";
  import codewinglet from "/public/sponsers/Logo_White.png";
 // import vsOverseas from "/public/sponsers/vs-overseas.png";
 import skywin from "../../public/sponsers/Skywin-IT-Academy-logo.jpg";
+import hisu from "../../public/sponsers/hisu.jpg";
 import carrerLine from "../../public/sponsers/Careerline-Logo.jpg";
 import msi from "/public/sponsers/msi.png";
 // import lamont from "/public/sponsers/lamont.png";
@@ -69,17 +70,6 @@ const SponserSection = () => {
         </BlurFade>
 
   
-
-<BlurFade inView className="mt-12">
-          <GradientAnimatedText className="font-bold tracking-tighter text-3xl xl:text-4xl/none text-center capitalize pb-2">
-            clothing sponsor
-          </GradientAnimatedText>
-
-          <div className="flex flex-col scale-75 md:flex-row justify-center items-center md:gap-12 m-4">
-            <Image src={ims} alt="Events Schedule" loading="lazy"  className="w-3/5 md:w-1/4 h-48 md:h-42 bg-white flex items-center justify-center"
- />
-          </div>
-        </BlurFade>
         <BlurFade inView className="mt-12">
           <GradientAnimatedText className="font-bold tracking-tighter text-3xl xl:text-4xl/none text-center capitalize pb-2">
             co sponsor
@@ -87,23 +77,37 @@ const SponserSection = () => {
 
           <div className="flex flex-col scale-75 md:flex-row justify-center items-center md:gap-12 m-4">
             <Image
-            src={chaipartner}
+            src={zuvee}
             alt="Events Schedule"
             className="w-3/5 md:w-1/4 h-48 md:h-44 bg-white flex items-center justify-center"
 
             loading="lazy"
           />  </div>
         </BlurFade>
-      <BlurFade inView className="mt-12">
+        <BlurFade inView className="mt-12">
+          <GradientAnimatedText className="font-bold tracking-tighter text-3xl xl:text-4xl/none text-center capitalize pb-2">
+            media partner
+          </GradientAnimatedText>
+
+          <div className="flex flex-col scale-75 md:flex-row justify-center items-center md:gap-12 m-4">
+            <Image
+            src={hisu}
+            alt="Events Schedule"
+            className="w-3/5 md:w-1/4 h-48 md:h-44 bg-white flex items-center justify-center"
+
+            loading="lazy"
+          />  </div>
+        </BlurFade>
+         <BlurFade inView className="mt-12">
         <GradientAnimatedText className="font-bold tracking-tighter text-3xl xl:text-4xl/none text-center capitalize pb-2">
-          gifting sponsor
+          clothing sponsor
         </GradientAnimatedText>
       </BlurFade>
 
       <BlurFade inView className="mt-6">
         <div className="flex flex-col md:flex-row justify-center items-center md:gap-12 m-4">
           <Image
-            src={zuvee}
+            src={ims}
             alt="Events Schedule"
             className="aspect-video scale-75 md:scale-100 bg-white w-4/5 md:w-1/4 flex items-center justify-center"
             loading="lazy"
@@ -117,12 +121,12 @@ const SponserSection = () => {
           
         </div>
       </BlurFade>
-
       <BlurFade inView className="mt-12">
-        <GradientAnimatedText className="font-bold tracking-tighter text-3xl xl:text-4xl/none text-center capitalize">
-          food sponsors
+        <GradientAnimatedText className="font-bold tracking-tighter text-3xl xl:text-4xl/none text-center capitalize pb-2">
+          food sponsor
         </GradientAnimatedText>
       </BlurFade>
+
       <BlurFade inView className="mt-6">
         <div className="flex flex-col md:flex-row justify-center items-center md:gap-12 m-4">
           <Image
@@ -131,10 +135,17 @@ const SponserSection = () => {
             className="aspect-video scale-75 md:scale-100 bg-white w-4/5 md:w-1/4 flex items-center justify-center"
             loading="lazy"
           />
-
+          <Image
+            src={chaipartner}
+            alt="Events Schedule"
+            className="aspect-video scale-75 md:scale-100 bg-white w-4/5 md:w-1/4 flex items-center justify-center"
+            loading="lazy"
+          />
           
         </div>
       </BlurFade>
+
+      
     </section>
   );
 };
