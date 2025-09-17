@@ -4,6 +4,7 @@ import { CyberpunkNav } from "@/components/cyberpunk-nav"
 import { DecryptionText } from "@/components/decryption-text"
 import Marquee from "../../components/magicui/marquee"
 import {
+  photographyTeam,
   hd1,
   hd,
   decorationTeam,
@@ -124,6 +125,10 @@ const page = () => {
           Decoration Team
         </GradientAnimatedText>
         <MarqueeTeams data={decorationTeam} />
+        <GradientAnimatedText className="text-2xl mt-10 mb-2 text-center font-bold tracking-tighter sm:text-3xl xl:text-4xl/none">
+          Photography Team
+        </GradientAnimatedText>
+        <MarqueeTeams data={photographyTeam} />
       </div>
     </div>
   )
@@ -203,7 +208,7 @@ const WebTeamCard = ({ people }: { people: PersonProps[] }) => {
         ))}
       </div>
 
-      <div className="flex items-center justify-center gap-20 mt-4">
+      <div className="flex items-center justify-center gap-20 mt-6">
         {people.slice(0, 2).map((person, index) => (
           <p
             key={index}
