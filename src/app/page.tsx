@@ -9,6 +9,7 @@ import googleLogo from "@/assets/eventScheduler.jpg";
 import FeaturedEvents from "@/components/FeaturedEvents"
 import schedule from "@/components/ScheduleSection"
 import SponserSection from "@/components/SponserSection"
+import CyberScheduleSection from "@/components/ScheduleSection"
 import { ChatWidget } from "@/components/chat-widget"
 import Image from "next/image";
 
@@ -54,22 +55,16 @@ export default function Home() {
         <section id="updates" className="min-h-screen flex items-center justify-center px-6">
           <div className="max-w-6xl mx-auto">
             
-             <InteractiveText variant="access">
-                <DecryptionText
-                  text="Schedule"
-                  className="text-primary text-xl font-mono"
-                  delay={1000}
-                />
-                </InteractiveText>
-              <Image src={googleLogo} alt="Event Schedule" />
+            
+             
            
+            <CyberScheduleSection />
             
 
           </div>
         </section>
         
       </div>
-      
 
     </main>
   )
